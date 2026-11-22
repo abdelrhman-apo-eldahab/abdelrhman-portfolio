@@ -150,7 +150,6 @@ html.lenis,html.lenis body{height:auto}
 @media (max-width:860px){.anim .rv.from-l,.anim .rv.from-r{transform:translate3d(0,34px,0)}}
 .anim .rv.in{opacity:1;transform:none}
 html,body{overflow-x:clip}
-.orbit{transform:translate3d(0,var(--py,0px),0)}
 /* portrait over the glowing sphere */
 .orbit{aspect-ratio:4/5;max-width:470px}
 .orbit svg.rings{top:2%;bottom:auto;height:auto;aspect-ratio:1}
@@ -329,7 +328,7 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
 
     <div class="orbit">
       <div class="sun"></div>
-      <img class="portrait" src="assets/abdelrhman.webp" width="760" height="1028" alt="Abdelrhman Rafaat" fetchpriority="high" decoding="async">
+      <img class="portrait" src="assets/abdelrhman.webp" width="760" height="1016" alt="Abdelrhman Rafaat" fetchpriority="high" decoding="async">
       <svg class="rings" viewBox="0 0 400 400" aria-hidden="true">
         <circle class="draw" cx="200" cy="200" r="186" stroke="var(--orange)" stroke-width="1.6" style="--len:1169"/>
         <circle class="draw" cx="200" cy="200" r="140" stroke="var(--blush)" stroke-width="22" style="--len:880;animation-delay:.5s"/>
@@ -578,10 +577,6 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
     groups.forEach(function(g){document.querySelectorAll(g[0]).forEach(function(el,i){
       el.classList.add('rv');if(g[1])el.classList.add(g[1]);if(g[2])el.style.setProperty('--d',(i*g[2]).toFixed(2)+'s');rio.observe(el);
     })});
-    // hero parallax
-    var orbit=document.querySelector('.orbit'),ticking=false;
-    addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){
-      var y=scrollY;if(y<1000)orbit.style.setProperty('--py',(y*.18).toFixed(1)+'px');ticking=false});},{passive:true});
   }
 
   var nav=document.getElementById('nav');
