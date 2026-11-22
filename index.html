@@ -37,6 +37,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
 a{color:inherit}
@@ -141,6 +142,7 @@ section.block{padding-block:clamp(72px,10vw,120px)}
 /* numbers */
 .numbers{background:var(--fg);color:var(--bg);border-radius:36px;padding:clamp(32px,6vw,64px);position:relative;overflow:hidden}
 .numbers::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:2px solid var(--orange);right:-160px;top:-180px;opacity:.7}
+.numbers>*{position:relative;z-index:1}
 .numbers .eyebrow{color:var(--orange)}
 .numbers h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:800;margin-top:12px;max-width:16ch}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:44px;background:color-mix(in srgb,var(--bg) 18%,transparent);border-radius:20px;overflow:hidden}
@@ -150,6 +152,8 @@ section.block{padding-block:clamp(72px,10vw,120px)}
 .stat>span{display:block;margin-top:10px;font-size:.88rem;opacity:.72}
 .numbers .note{margin-top:20px;font-family:var(--mono);font-size:.74rem;opacity:.55}
 @media (max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.stats{grid-template-columns:1fr}.stat{padding:20px}.stat strong{font-size:2.3rem}}
+.stat{min-width:0}
 
 /* work */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
@@ -189,12 +193,14 @@ section.block{padding-block:clamp(72px,10vw,120px)}
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .edu-card{border-radius:28px;padding:clamp(26px,4vw,40px);border:1px solid var(--line);background:var(--surface);position:relative;overflow:hidden}
 .edu-card.uni::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:var(--orange);right:-80px;bottom:-90px}
+.edu-card>*{position:relative;z-index:1}
 .edu-card .yr{font-family:var(--mono);color:var(--orange-ink);font-size:.85rem}
 .edu-card h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-top:10px}
 .edu-card p{color:var(--muted);margin-top:10px;max-width:30ch;position:relative;z-index:1}
 .courses{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .courses li{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:600;font-size:.92rem}
 @media (max-width:760px){.edu{grid-template-columns:1fr}}
+@media (max-width:560px){.numbers::after{width:220px;height:220px;right:-110px;top:-120px}.edu-card.uni::after{width:140px;height:140px;right:-60px;bottom:-70px}.edu-card.uni p{max-width:24ch}.contact::before{width:340px;height:340px;right:-200px;top:-200px}.contact::after{width:200px;height:200px;right:-90px;top:-110px}}
 
 /* contact */
 .contact{background:var(--orange);color:var(--on-orange);border-radius:40px;padding:clamp(32px,6vw,72px);position:relative;overflow:hidden}
@@ -363,10 +369,10 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:var(--orange);colo
         </ul>
       </div>
       <div class="shots multi">
-        <button class="shot" data-full="assets/conv-4.jpg"><img loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Ads Manager: 16 website purchase campaigns with ROAS, cost per purchase and purchase value"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-1.jpg"><img loading="lazy" decoding="async" src="assets/conv-1.jpg" alt="Ads Manager table of conversion ad sets sorted by purchase value"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-2.jpg"><img loading="lazy" decoding="async" src="assets/conv-2.jpg" alt="More conversion ad sets with ROAS and cost per purchase"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-3.jpg"><img loading="lazy" decoding="async" src="assets/conv-3.jpg" alt="Catalog and retargeting ad sets"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/conv-4.jpg"><img width="1800" height="840" loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Ads Manager: 16 website purchase campaigns with ROAS, cost per purchase and purchase value"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/conv-1.jpg"><img width="1800" height="867" loading="lazy" decoding="async" src="assets/conv-1.jpg" alt="Ads Manager table of conversion ad sets sorted by purchase value"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/conv-2.jpg"><img width="1800" height="868" loading="lazy" decoding="async" src="assets/conv-2.jpg" alt="More conversion ad sets with ROAS and cost per purchase"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/conv-3.jpg"><img width="1800" height="837" loading="lazy" decoding="async" src="assets/conv-3.jpg" alt="Catalog and retargeting ad sets"><span class="zoom">View</span></button>
       </div>
     </div>
 
@@ -384,8 +390,8 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:var(--orange);colo
         </ul>
       </div>
       <div class="shots">
-        <button class="shot" data-full="assets/store-2.jpg"><img loading="lazy" decoding="async" src="assets/store-2.jpg" alt="WooCommerce performance dashboard, January to November 2026, with monthly net and total sales"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/result.jpg"><img loading="lazy" decoding="async" src="assets/result.jpg" alt="WooCommerce performance dashboard with sales charts"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/store-2.jpg"><img width="1750" height="912" loading="lazy" decoding="async" src="assets/store-2.jpg" alt="WooCommerce performance dashboard, January to November 2026, with monthly net and total sales"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/result.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/result.jpg" alt="WooCommerce performance dashboard with sales charts"><span class="zoom">View</span></button>
       </div>
     </div>
 
@@ -403,12 +409,12 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:var(--orange);colo
         </ul>
       </div>
       <div class="shots multi">
-        <button class="shot" data-full="assets/msg-6.jpg"><img loading="lazy" decoding="async" src="assets/msg-6.jpg" alt="Messaging campaigns with the highest spend, conversations and cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-3.jpg"><img loading="lazy" decoding="async" src="assets/msg-3.jpg" alt="Messaging and traffic campaigns ranked by amount spent"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-4.jpg"><img loading="lazy" decoding="async" src="assets/msg-4.jpg" alt="More messaging campaigns with cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-5.jpg"><img loading="lazy" decoding="async" src="assets/msg-5.jpg" alt="Smaller messaging and awareness campaigns"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-1.jpg"><img loading="lazy" decoding="async" src="assets/msg-1.jpg" alt="Message campaign ad sets with cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-2.jpg"><img loading="lazy" decoding="async" src="assets/msg-2.jpg" alt="December 2025 messaging campaigns"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-6.jpg"><img width="1800" height="841" loading="lazy" decoding="async" src="assets/msg-6.jpg" alt="Messaging campaigns with the highest spend, conversations and cost per conversation"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-3.jpg"><img width="1800" height="819" loading="lazy" decoding="async" src="assets/msg-3.jpg" alt="Messaging and traffic campaigns ranked by amount spent"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-4.jpg"><img width="1800" height="829" loading="lazy" decoding="async" src="assets/msg-4.jpg" alt="More messaging campaigns with cost per conversation"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-5.jpg"><img width="1800" height="804" loading="lazy" decoding="async" src="assets/msg-5.jpg" alt="Smaller messaging and awareness campaigns"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-1.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/msg-1.jpg" alt="Message campaign ad sets with cost per conversation"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/msg-2.jpg"><img width="1800" height="832" loading="lazy" decoding="async" src="assets/msg-2.jpg" alt="December 2025 messaging campaigns"><span class="zoom">View</span></button>
       </div>
     </div>
 
@@ -425,7 +431,7 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:var(--orange);colo
         </ul>
       </div>
       <div class="shots">
-        <button class="shot" data-full="assets/prev.jpg"><img loading="lazy" decoding="async" src="assets/prev.jpg" alt="Engagement, traffic and follower ad sets"><span class="zoom">View</span></button>
+        <button class="shot" data-full="assets/prev.jpg"><img width="1800" height="833" loading="lazy" decoding="async" src="assets/prev.jpg" alt="Engagement, traffic and follower ad sets"><span class="zoom">View</span></button>
       </div>
     </div>
   </div>
