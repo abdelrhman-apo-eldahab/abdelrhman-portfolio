@@ -165,6 +165,15 @@ html,body{overflow-x:clip}
 .chip-card{right:-4%;top:9%}
 .chip-card2{right:-6%;bottom:9%}
 @media (max-width:860px){.kpi-card{left:0}.chip-card{right:0}.chip-card2{right:0}}
+@media (max-width:560px){
+  .chip-card{display:none}
+  .kpi-card{left:0;bottom:3%;min-width:0;padding:12px 16px;border-radius:16px}
+  .kpi-card small{font-size:.62rem}
+  .kpi-card strong{font-size:1.9rem!important;margin-top:4px}
+  .kpi-card .bar{display:none}
+  .chip-card2{right:0;bottom:3%;padding:12px 16px}
+  .chip-card2 b{font-size:1.25rem}
+}
 
 /* about */
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch}
