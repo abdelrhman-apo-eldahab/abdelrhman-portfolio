@@ -197,14 +197,15 @@ html,body{overflow-x:clip}
 .numbers::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.18),transparent 65%);right:-200px;top:-260px;pointer-events:none}
 .numbers>*{position:relative;z-index:1}
 .numbers h2{font-size:clamp(1.9rem,4vw,3.1rem);font-weight:700;margin-top:16px;max-width:18ch}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
-.stat{min-width:0;padding:24px 20px;border-radius:18px;border:1px solid var(--line-strong);background:rgba(4,10,24,.5);text-align:center;box-shadow:inset 0 0 30px -12px rgba(34,211,238,.35)}
-.stat strong{font-family:var(--display);font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:700;display:block;line-height:1;color:var(--orange-ink);text-shadow:0 0 22px rgba(34,211,238,.45)}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.stats .stat{flex:1 1 170px}
+.stat{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:24px 14px;border-radius:18px;border:1px solid var(--line-strong);background:rgba(4,10,24,.5);text-align:center;box-shadow:inset 0 0 30px -12px rgba(34,211,238,.35)}
+.stat strong{font-family:var(--display);font-size:clamp(1.7rem,2.5vw,2.35rem);white-space:nowrap;font-weight:700;display:block;line-height:1;color:var(--orange-ink);text-shadow:0 0 22px rgba(34,211,238,.45)}
 .stat strong sub{font-size:.42em;vertical-align:baseline;font-weight:500;margin-left:4px;color:var(--muted);text-shadow:none}
 .stat>span{display:block;margin-top:10px;font-size:.86rem;color:var(--muted)}
 .numbers .note{margin-top:20px;font-family:var(--mono);font-size:.72rem;color:var(--muted);opacity:.8}
-@media (max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.stats{grid-template-columns:1fr}.stat{padding:20px}.stat strong{font-size:2.2rem}}
+
+@media (max-width:560px){.stats .stat{flex-basis:100%}.stat{padding:20px}.stat strong{font-size:2.2rem}}
 
 /* work */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
@@ -351,10 +352,10 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
       <div class="chip-card" aria-hidden="true"><i></i>Active · High performing</div>
       <div class="kpi-card" aria-hidden="true">
         <small>Avg. purchase ROAS</small>
-        <strong><span class="num" data-count="9.22" data-dec="2">9.22</span><em>×</em></strong>
+        <strong><span class="num" data-count="9.47" data-dec="2">9.47</span><em>×</em></strong>
         <div class="bar"><i></i></div>
       </div>
-      <div class="chip-card2" aria-hidden="true"><b class="num">3.94%</b>conversion rate</div>
+      <div class="chip-card2" aria-hidden="true"><b class="num">4.05%</b>conversion rate</div>
       
     </div>
   </div>
@@ -397,15 +398,16 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
 <section class="block" id="numbers" style="padding-top:0">
   <div class="wrap">
     <div class="numbers">
-      <span class="eyebrow">El Hamd Collagen · 74 ad sets</span>
+      <span class="eyebrow">El Hamd Collagen · 16 campaigns</span>
       <h2>Every pound spent came back more than nine times.</h2>
       <div class="stats">
-        <div class="stat"><strong class="num"><span data-count="133210">133,210</span><sub>EGP</sub></strong><span>Top ad set purchase value</span></div>
-        <div class="stat"><strong class="num"><span data-count="57538">57,538</span><sub>EGP</sub></strong><span>Total ad spend</span></div>
-        <div class="stat"><strong class="num"><span data-count="9.22" data-dec="2">9.22</span><sub>×</sub></strong><span>Average purchase ROAS</span></div>
-        <div class="stat"><strong class="num"><span data-count="978">978</span><sub>EGP</sub></strong><span>Average order value</span></div>
+        <div class="stat"><strong class="num"><span data-count="46068">46,068</span><sub>EGP</sub></strong><span>Total spent</span></div>
+        <div class="stat"><strong class="num"><span data-count="436227">436,227</span><sub>EGP</sub></strong><span>Results value</span></div>
+        <div class="stat"><strong class="num"><span data-count="9.47" data-dec="2">9.47</span><sub>×</sub></strong><span>Purchase ROAS</span></div>
+        <div class="stat"><strong class="num"><span data-count="998">998</span><sub>EGP</sub></strong><span>Average order value</span></div>
+        <div class="stat"><strong class="num"><span data-count="4.05" data-dec="2">4.05</span><sub>%</sub></strong><span>Conversion rate</span></div>
       </div>
-      <p class="note">Source: Meta Ads Manager, 74 ad sets, Oct 2023 – Nov 2026.</p>
+      <p class="note">Source: Meta Ads Manager, El Hamd Collagen, 16 website purchase campaigns, Oct 2023 – Nov 2026.</p>
     </div>
   </div>
 </section>
@@ -430,53 +432,36 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
         <div class="chips"><span>WooCommerce</span><span>Meta Ads</span><span>GA4</span><span>Pixel tracking</span></div>
         <p class="desc">Natural collagen store on WooCommerce. Website purchase campaigns with lookalike, broad, catalog and retargeting ad sets, measured in Ads Manager, the store and Google Analytics 4.</p>
         <ul class="kv">
-          <li><span>Ad sets</span><b>74</b></li>
-          <li><span>Ad spend</span><b>57,537.70 EGP</b></li>
-          <li><span>Average ROAS</span><b>9.22</b></li>
-          <li><span>Conversion rate</span><b>3.94%</b></li>
+          <li><span>Total spent</span><b>46,068.05 EGP</b></li>
+          <li><span>Results value</span><b>436,227 EGP</b></li>
+          <li><span>Purchase ROAS</span><b>9.47</b></li>
+          <li><span>Average order value</span><b>998.23 EGP</b></li>
+          <li><span>Conversion rate</span><b>4.05%</b></li>
+          <li><span>Website purchases</span><b>429</b></li>
           <li><span>Top ad set</span><b>121 purchases · 13.91</b></li>
-          <li><span>Best ad set ROAS</span><b>17.84</b></li>
           <li><span>Store total sales</span><b>495,411 EGP</b></li>
-          <li><span>Store orders</span><b>466</b></li>
-          <li><span>Store AOV</span><b>1,018 EGP</b></li>
           <li><span>GA4 purchases</span><b>411</b></li>
         </ul>
       </div>
       <div class="galleries">
         <div class="gallery">
-          <h4 class="g-title">Meta Ads · ad sets<span>Oct 2023 – Nov 2026, by purchase value</span></h4>
+          <h4 class="g-title">Meta Ads · top results<span>Campaigns and best ad sets, Oct 2023 – Nov 2026</span></h4>
           <div class="shots multi">
+            <button class="shot" data-full="assets/conv-4.jpg"><img width="1800" height="840" loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Campaign view: 16 website purchase campaigns with ROAS, cost per purchase and purchase value"><span class="zoom">View</span></button>
             <button class="shot" data-full="assets/conv-7.jpg"><img width="1280" height="610" loading="lazy" decoding="async" src="assets/conv-7.jpg" alt="Top ad sets by purchase value, led by a 1% lookalike with 121 purchases at ROAS 13.91"><span class="zoom">View</span></button>
             <button class="shot" data-full="assets/conv-6.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/conv-6.jpg" alt="Ad sets with 5 to 12 purchases and ROAS between 6.78 and 11.45"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/conv-5.jpg"><img width="1280" height="605" loading="lazy" decoding="async" src="assets/conv-5.jpg" alt="Smaller test ad sets with cost per purchase and ROAS"><span class="zoom">View</span></button>
           </div>
         </div>
         <div class="gallery">
-          <h4 class="g-title">Meta Ads · campaigns<span>16 website purchase campaigns</span></h4>
+          <h4 class="g-title">WooCommerce store<span>January 1 – November 25, 2026</span></h4>
           <div class="shots">
-            <button class="shot" data-full="assets/conv-4.jpg"><img width="1800" height="840" loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Campaign view: 16 website purchase campaigns with ROAS, cost per purchase and purchase value"><span class="zoom">View</span></button>
-          </div>
-        </div>
-        <div class="gallery">
-          <h4 class="g-title">WooCommerce store<span>Sales recorded by the store, 2026</span></h4>
-          <div class="shots multi">
             <button class="shot" data-full="assets/store-3.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/store-3.jpg" alt="WooCommerce, January 1 to November 25, 2026: 495,411 EGP total sales from 466 orders"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/store-2.jpg"><img width="1750" height="912" loading="lazy" decoding="async" src="assets/store-2.jpg" alt="WooCommerce, January 1 to November 19, 2026: 465,272 EGP total sales from 445 orders"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/result.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/result.jpg" alt="WooCommerce, January 1 to October 12, 2026: 337,217 EGP total sales from 335 orders"><span class="zoom">View</span></button>
           </div>
         </div>
         <div class="gallery">
           <h4 class="g-title">Google Analytics 4<span>Reports snapshot, product names hidden</span></h4>
           <div class="shots">
             <button class="shot" data-full="assets/ga4.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/ga4.jpg" alt="GA4: 1.5K add to carts and 411 purchases"><span class="zoom">View</span></button>
-          </div>
-        </div>
-        <div class="gallery">
-          <h4 class="g-title">Earlier snapshot<span>51 ad sets, Sep 2023 – Oct 2026</span></h4>
-          <div class="shots multi">
-            <button class="shot" data-full="assets/conv-1.jpg"><img width="1800" height="867" loading="lazy" decoding="async" src="assets/conv-1.jpg" alt="51 ad sets sorted by purchase value, average ROAS 8.27"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/conv-2.jpg"><img width="1800" height="868" loading="lazy" decoding="async" src="assets/conv-2.jpg" alt="More ad sets from the same period"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/conv-3.jpg"><img width="1800" height="837" loading="lazy" decoding="async" src="assets/conv-3.jpg" alt="Catalog and retargeting test ad sets"><span class="zoom">View</span></button>
           </div>
         </div>
       </div>
@@ -501,21 +486,12 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
       </div>
       <div class="galleries">
         <div class="gallery">
-          <h4 class="g-title">Campaigns by results<span>Oct 2023 – Nov 2026</span></h4>
+          <h4 class="g-title">Top campaigns<span>Oct 2023 – Nov 2026</span></h4>
           <div class="shots multi">
             <button class="shot" data-full="assets/msg-10.jpg"><img width="1280" height="584" loading="lazy" decoding="async" src="assets/msg-10.jpg" alt="Top campaigns by results: awareness reach, page likes and the highest-volume messaging campaigns"><span class="zoom">View</span></button>
             <button class="shot" data-full="assets/msg-9.jpg"><img width="1280" height="601" loading="lazy" decoding="async" src="assets/msg-9.jpg" alt="Messaging campaigns with 83 to 218 conversations, from 2.15 EGP each"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/msg-7.jpg"><img width="1280" height="615" loading="lazy" decoding="async" src="assets/msg-7.jpg" alt="Messaging and page-like campaigns with 22 to 65 results"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/msg-8.jpg"><img width="1280" height="604" loading="lazy" decoding="async" src="assets/msg-8.jpg" alt="Smaller messaging campaigns with 9 to 20 conversations"><span class="zoom">View</span></button>
-          </div>
-        </div>
-        <div class="gallery">
-          <h4 class="g-title">Campaigns by spend<span>Same account, sorted by amount spent</span></h4>
-          <div class="shots multi">
             <button class="shot" data-full="assets/msg-6.jpg"><img width="1800" height="841" loading="lazy" decoding="async" src="assets/msg-6.jpg" alt="Highest-spend campaigns with conversations and cost per conversation"><span class="zoom">View</span></button>
             <button class="shot" data-full="assets/msg-3.jpg"><img width="1800" height="819" loading="lazy" decoding="async" src="assets/msg-3.jpg" alt="Messaging and traffic campaigns ranked by amount spent"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/msg-4.jpg"><img width="1800" height="829" loading="lazy" decoding="async" src="assets/msg-4.jpg" alt="More messaging campaigns with cost per conversation"><span class="zoom">View</span></button>
-            <button class="shot" data-full="assets/msg-5.jpg"><img width="1800" height="804" loading="lazy" decoding="async" src="assets/msg-5.jpg" alt="Lower-spend messaging and awareness campaigns"><span class="zoom">View</span></button>
           </div>
         </div>
       </div>
