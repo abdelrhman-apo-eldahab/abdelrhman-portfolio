@@ -229,6 +229,19 @@ html,body{overflow-x:clip}
 @media (max-width:860px){.panel{grid-template-columns:1fr}}
 @media (max-width:520px){.shots.multi{grid-template-columns:1fr}}
 
+/* client panels */
+.tab{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;text-align:left}
+.tab small{font-weight:500;font-size:.72rem;opacity:.75;margin-top:2px}
+.client{position:sticky;top:96px;align-self:start}
+.c-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.client h3{margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:.76rem;font-weight:600;color:var(--orange-ink);border:1px solid var(--line-strong);background:rgba(34,211,238,.06);border-radius:8px;padding:4px 10px}
+.galleries{display:grid;gap:30px;min-width:0}
+.g-title{font-family:var(--body);font-size:.95rem;font-weight:700;letter-spacing:0;margin:0 0 12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding-left:12px;border-left:2px solid var(--orange)}
+.g-title span{font-family:var(--mono);font-size:.72rem;font-weight:400;color:var(--muted)}
+@media (max-width:860px){.client{position:static}}
+
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s;padding:clamp(24px,4vw,44px) clamp(16px,3vw,32px);position:relative}
 .step{text-align:center;position:relative;padding:0 6px;display:flex;flex-direction:column;align-items:center}
@@ -361,7 +374,7 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
       <p class="big" style="margin-top:18px">Mid-level Media Buyer, buying ads since <mark>2025</mark>. I learn by running real campaigns with real budgets, then reading the numbers <mark>honestly</mark>.</p>
       <div class="industries">
         <span class="lab">Industries</span>
-        <span>Women's handbags</span><span>Fresh meat</span><span>Construction</span>
+        <span>Collagen e-commerce</span><span>Low-current systems</span><span>Women's handbags</span><span>Fresh meat</span><span>Construction</span>
       </div>
     </div>
     <div class="skills">
@@ -384,7 +397,7 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
 <section class="block" id="numbers" style="padding-top:0">
   <div class="wrap">
     <div class="numbers">
-      <span class="eyebrow">Website purchase campaigns · 74 ad sets</span>
+      <span class="eyebrow">El Hamd Collagen · 74 ad sets</span>
       <h2>Every pound spent came back more than nine times.</h2>
       <div class="stats">
         <div class="stat"><strong class="num"><span data-count="133210">133,210</span><sub>EGP</sub></strong><span>Top ad set purchase value</span></div>
@@ -400,97 +413,149 @@ dialog.lb .x{position:absolute;top:10px;right:10px;background:linear-gradient(13
 <section class="block" id="work" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="eyebrow">Selected work</span><h2>Campaigns, as reported</h2></div>
-      <p>Real screenshots from Ads Manager and the store dashboard. Click any image to see it full size.</p>
+      <div><span class="eyebrow">Selected work</span><h2>Clients and results</h2></div>
+      <p>Real screenshots from Ads Manager, WooCommerce and GA4, grouped by client. Click any image to see it full size.</p>
     </div>
 
-    <div class="tabs" role="tablist" aria-label="Campaign types">
-      <button class="tab" role="tab" id="t-conv" aria-controls="p-conv" aria-selected="true">Conversion</button>
-      <button class="tab" role="tab" id="t-store" aria-controls="p-store" aria-selected="false">Store results</button>
-      <button class="tab" role="tab" id="t-msg" aria-controls="p-msg" aria-selected="false">Messages</button>
-      <button class="tab" role="tab" id="t-prev" aria-controls="p-prev" aria-selected="false">Earlier work</button>
+    <div class="tabs" role="tablist" aria-label="Clients">
+      <button class="tab" role="tab" id="t-hamd" aria-controls="p-hamd" aria-selected="true">El Hamd Collagen<small>E-commerce</small></button>
+      <button class="tab" role="tab" id="t-infra" aria-controls="p-infra" aria-selected="false">Infratech<small>Low-current systems</small></button>
+      <button class="tab" role="tab" id="t-other" aria-controls="p-other" aria-selected="false">Other clients<small>Local businesses</small></button>
     </div>
 
-    <div class="panel" role="tabpanel" id="p-conv" aria-labelledby="t-conv">
-      <div>
-        <h3>Website purchase campaigns</h3>
-        <p class="desc">Lookalike 1–3%, broad, catalog and retargeting ad sets for an e-commerce brand. The top ad set, a 1% lookalike, brought 121 purchases worth 133,210 EGP at ROAS 13.91.</p>
+    <div class="panel" role="tabpanel" id="p-hamd" aria-labelledby="t-hamd">
+      <div class="client">
+        <span class="c-tag">Client · E-commerce</span>
+        <h3>El Hamd Collagen</h3>
+        <div class="chips"><span>WooCommerce</span><span>Meta Ads</span><span>GA4</span><span>Pixel tracking</span></div>
+        <p class="desc">Natural collagen store on WooCommerce. Website purchase campaigns with lookalike, broad, catalog and retargeting ad sets, measured in Ads Manager, the store and Google Analytics 4.</p>
         <ul class="kv">
           <li><span>Ad sets</span><b>74</b></li>
-          <li><span>Spend</span><b>57,537.70 EGP</b></li>
+          <li><span>Ad spend</span><b>57,537.70 EGP</b></li>
           <li><span>Average ROAS</span><b>9.22</b></li>
           <li><span>Conversion rate</span><b>3.94%</b></li>
-          <li><span>Average order value</span><b>978.29 EGP</b></li>
           <li><span>Top ad set</span><b>121 purchases · 13.91</b></li>
           <li><span>Best ad set ROAS</span><b>17.84</b></li>
-        </ul>
-      </div>
-      <div class="shots multi">
-        <button class="shot" data-full="assets/conv-7.jpg"><img width="1280" height="610" loading="lazy" decoding="async" src="assets/conv-7.jpg" alt="Ads Manager: top website purchase ad sets by purchase value, led by a 1% lookalike at ROAS 13.91"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-6.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/conv-6.jpg" alt="More ad sets with 5 to 12 purchases and ROAS between 6.78 and 11.45"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-5.jpg"><img width="1280" height="605" loading="lazy" decoding="async" src="assets/conv-5.jpg" alt="Smaller test ad sets with cost per purchase and ROAS"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/conv-4.jpg"><img width="1800" height="840" loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Campaign-level view of the same account"><span class="zoom">View</span></button>
-      </div>
-    </div>
-
-    <div class="panel" role="tabpanel" id="p-store" aria-labelledby="t-store" hidden>
-      <div>
-        <h3>What the store recorded</h3>
-        <p class="desc">WooCommerce analytics for the same brand, January 1 to November 25, 2026, with Google Analytics 4 tracking the same purchases. Net sales peaked in October.</p>
-        <ul class="kv">
-          <li><span>Total sales</span><b>495,411 EGP</b></li>
-          <li><span>Net sales</span><b>474,301 EGP</b></li>
-          <li><span>Orders</span><b>466</b></li>
-          <li><span>Products sold</span><b>680</b></li>
-          <li><span>Average order value</span><b>1,018 EGP</b></li>
-          <li><span>Visitors</span><b>3,993</b></li>
-          <li><span>GA4 add to carts</span><b>1.5K</b></li>
+          <li><span>Store total sales</span><b>495,411 EGP</b></li>
+          <li><span>Store orders</span><b>466</b></li>
+          <li><span>Store AOV</span><b>1,018 EGP</b></li>
           <li><span>GA4 purchases</span><b>411</b></li>
         </ul>
       </div>
-      <div class="shots">
-        <button class="shot" data-full="assets/store-3.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/store-3.jpg" alt="WooCommerce dashboard, January 1 to November 25, 2026: 495,411 EGP total sales from 466 orders"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/ga4.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/ga4.jpg" alt="Google Analytics 4 snapshot: 1.5K add to carts and 411 purchases, product names hidden"><span class="zoom">View</span></button>
+      <div class="galleries">
+        <div class="gallery">
+          <h4 class="g-title">Meta Ads · ad sets<span>Oct 2023 – Nov 2026, by purchase value</span></h4>
+          <div class="shots multi">
+            <button class="shot" data-full="assets/conv-7.jpg"><img width="1280" height="610" loading="lazy" decoding="async" src="assets/conv-7.jpg" alt="Top ad sets by purchase value, led by a 1% lookalike with 121 purchases at ROAS 13.91"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/conv-6.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/conv-6.jpg" alt="Ad sets with 5 to 12 purchases and ROAS between 6.78 and 11.45"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/conv-5.jpg"><img width="1280" height="605" loading="lazy" decoding="async" src="assets/conv-5.jpg" alt="Smaller test ad sets with cost per purchase and ROAS"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Meta Ads · campaigns<span>16 website purchase campaigns</span></h4>
+          <div class="shots">
+            <button class="shot" data-full="assets/conv-4.jpg"><img width="1800" height="840" loading="lazy" decoding="async" src="assets/conv-4.jpg" alt="Campaign view: 16 website purchase campaigns with ROAS, cost per purchase and purchase value"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">WooCommerce store<span>Sales recorded by the store, 2026</span></h4>
+          <div class="shots multi">
+            <button class="shot" data-full="assets/store-3.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/store-3.jpg" alt="WooCommerce, January 1 to November 25, 2026: 495,411 EGP total sales from 466 orders"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/store-2.jpg"><img width="1750" height="912" loading="lazy" decoding="async" src="assets/store-2.jpg" alt="WooCommerce, January 1 to November 19, 2026: 465,272 EGP total sales from 445 orders"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/result.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/result.jpg" alt="WooCommerce, January 1 to October 12, 2026: 337,217 EGP total sales from 335 orders"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Google Analytics 4<span>Reports snapshot, product names hidden</span></h4>
+          <div class="shots">
+            <button class="shot" data-full="assets/ga4.jpg"><img width="1280" height="608" loading="lazy" decoding="async" src="assets/ga4.jpg" alt="GA4: 1.5K add to carts and 411 purchases"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Earlier snapshot<span>51 ad sets, Sep 2023 – Oct 2026</span></h4>
+          <div class="shots multi">
+            <button class="shot" data-full="assets/conv-1.jpg"><img width="1800" height="867" loading="lazy" decoding="async" src="assets/conv-1.jpg" alt="51 ad sets sorted by purchase value, average ROAS 8.27"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/conv-2.jpg"><img width="1800" height="868" loading="lazy" decoding="async" src="assets/conv-2.jpg" alt="More ad sets from the same period"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/conv-3.jpg"><img width="1800" height="837" loading="lazy" decoding="async" src="assets/conv-3.jpg" alt="Catalog and retargeting test ad sets"><span class="zoom">View</span></button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="panel" role="tabpanel" id="p-msg" aria-labelledby="t-msg" hidden>
-      <div>
-        <h3>Messaging campaigns</h3>
-        <p class="desc">Campaigns that start conversations on Messenger and WhatsApp, for local businesses selling through chat: smart home, security cameras, UPS, Wi-Fi and intercoms.</p>
+    <div class="panel" role="tabpanel" id="p-infra" aria-labelledby="t-infra" hidden>
+      <div class="client">
+        <span class="c-tag">Client · Low-current systems</span>
+        <h3>Infratech</h3>
+        <div class="chips"><span>Messenger</span><span>WhatsApp</span><span>Awareness</span><span>Engagement</span></div>
+        <p class="desc">Low-current and smart home systems: smart locks, security cameras, intercoms, UPS and Wi-Fi. Campaigns that start conversations on Messenger and WhatsApp, plus awareness and page growth.</p>
         <ul class="kv">
           <li><span>Campaigns</span><b>68</b></li>
           <li><span>Total spend</span><b>29,621.31 EGP</b></li>
           <li><span>Impressions</span><b>883,056</b></li>
           <li><span>Accounts reached</span><b>498,584</b></li>
           <li><span>Top campaign</span><b>668 chats at 2.93 EGP</b></li>
-          <li><span>Cost per conversation</span><b>from 2.03 EGP</b></li>
+          <li><span>Cheapest conversation</span><b>2.15 EGP</b></li>
+          <li><span>Awareness reach</span><b>44,609 at 3.32 EGP / 1K</b></li>
+          <li><span>Page likes</span><b>863 at 1.79 EGP</b></li>
         </ul>
       </div>
-      <div class="shots multi">
-        <button class="shot" data-full="assets/msg-6.jpg"><img width="1800" height="841" loading="lazy" decoding="async" src="assets/msg-6.jpg" alt="Messaging campaigns with the highest spend, conversations and cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-3.jpg"><img width="1800" height="819" loading="lazy" decoding="async" src="assets/msg-3.jpg" alt="Messaging and traffic campaigns ranked by amount spent"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-4.jpg"><img width="1800" height="829" loading="lazy" decoding="async" src="assets/msg-4.jpg" alt="More messaging campaigns with cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-5.jpg"><img width="1800" height="804" loading="lazy" decoding="async" src="assets/msg-5.jpg" alt="Smaller messaging and awareness campaigns"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-1.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/msg-1.jpg" alt="Message campaign ad sets with cost per conversation"><span class="zoom">View</span></button>
-        <button class="shot" data-full="assets/msg-2.jpg"><img width="1800" height="832" loading="lazy" decoding="async" src="assets/msg-2.jpg" alt="December 2025 messaging campaigns"><span class="zoom">View</span></button>
+      <div class="galleries">
+        <div class="gallery">
+          <h4 class="g-title">Campaigns by results<span>Oct 2023 – Nov 2026</span></h4>
+          <div class="shots multi">
+            <button class="shot" data-full="assets/msg-10.jpg"><img width="1280" height="584" loading="lazy" decoding="async" src="assets/msg-10.jpg" alt="Top campaigns by results: awareness reach, page likes and the highest-volume messaging campaigns"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-9.jpg"><img width="1280" height="601" loading="lazy" decoding="async" src="assets/msg-9.jpg" alt="Messaging campaigns with 83 to 218 conversations, from 2.15 EGP each"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-7.jpg"><img width="1280" height="615" loading="lazy" decoding="async" src="assets/msg-7.jpg" alt="Messaging and page-like campaigns with 22 to 65 results"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-8.jpg"><img width="1280" height="604" loading="lazy" decoding="async" src="assets/msg-8.jpg" alt="Smaller messaging campaigns with 9 to 20 conversations"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Campaigns by spend<span>Same account, sorted by amount spent</span></h4>
+          <div class="shots multi">
+            <button class="shot" data-full="assets/msg-6.jpg"><img width="1800" height="841" loading="lazy" decoding="async" src="assets/msg-6.jpg" alt="Highest-spend campaigns with conversations and cost per conversation"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-3.jpg"><img width="1800" height="819" loading="lazy" decoding="async" src="assets/msg-3.jpg" alt="Messaging and traffic campaigns ranked by amount spent"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-4.jpg"><img width="1800" height="829" loading="lazy" decoding="async" src="assets/msg-4.jpg" alt="More messaging campaigns with cost per conversation"><span class="zoom">View</span></button>
+            <button class="shot" data-full="assets/msg-5.jpg"><img width="1800" height="804" loading="lazy" decoding="async" src="assets/msg-5.jpg" alt="Lower-spend messaging and awareness campaigns"><span class="zoom">View</span></button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="panel" role="tabpanel" id="p-prev" aria-labelledby="t-prev" hidden>
-      <div>
-        <h3>Engagement and traffic</h3>
-        <p class="desc">Earlier work for a handbags brand: engagement, page likes, Instagram traffic and messages.</p>
+    <div class="panel" role="tabpanel" id="p-other" aria-labelledby="t-other" hidden>
+      <div class="client">
+        <span class="c-tag">Clients · Local businesses</span>
+        <h3>Other clients</h3>
+        <div class="chips"><span>Messaging</span><span>Engagement</span><span>Traffic</span></div>
+        <p class="desc">Messaging campaigns for local businesses selling through chat, including a butcher shop, and earlier engagement and Instagram traffic work for a women's handbags brand.</p>
         <ul class="kv">
-          <li><span>Post engagements</span><b>8,039</b></li>
-          <li><span>Cost per engagement</span><b>0.06 EGP</b></li>
-          <li><span>Follows or likes</span><b>962</b></li>
+          <li><span>Messaging contacts</span><b>469</b></li>
+          <li><span>Reach</span><b>23,144</b></li>
+          <li><span>Cost per conversation</span><b>from 2.03 EGP</b></li>
+          <li><span>Dec 2025 contacts</span><b>243 for 1,095.40 EGP</b></li>
+          <li><span>Handbags post engagements</span><b>8,039 at 0.06 EGP</b></li>
+          <li><span>Handbags follows or likes</span><b>962</b></li>
           <li><span>Best unique CTR</span><b>12.34%</b></li>
-          <li><span>Instagram profile visits</span><b>428</b></li>
         </ul>
       </div>
-      <div class="shots">
-        <button class="shot" data-full="assets/prev.jpg"><img width="1800" height="833" loading="lazy" decoding="async" src="assets/prev.jpg" alt="Engagement, traffic and follower ad sets"><span class="zoom">View</span></button>
+      <div class="galleries">
+        <div class="gallery">
+          <h4 class="g-title">Local businesses · messaging<span>Dec 2022 – Jan 2026</span></h4>
+          <div class="shots">
+            <button class="shot" data-full="assets/msg-1.jpg"><img width="1800" height="862" loading="lazy" decoding="async" src="assets/msg-1.jpg" alt="Messaging ad sets for local businesses with cost per conversation"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Butcher shop · December 2025<span>4 campaigns</span></h4>
+          <div class="shots">
+            <button class="shot" data-full="assets/msg-2.jpg"><img width="1800" height="832" loading="lazy" decoding="async" src="assets/msg-2.jpg" alt="December 2025 messaging campaigns: 243 contacts for 1,095.40 EGP"><span class="zoom">View</span></button>
+          </div>
+        </div>
+        <div class="gallery">
+          <h4 class="g-title">Women's handbags brand<span>Engagement, likes and Instagram traffic</span></h4>
+          <div class="shots">
+            <button class="shot" data-full="assets/prev.jpg"><img width="1800" height="833" loading="lazy" decoding="async" src="assets/prev.jpg" alt="Engagement, traffic and follower ad sets for a handbags brand"><span class="zoom">View</span></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
